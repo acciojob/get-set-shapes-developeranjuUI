@@ -3,8 +3,8 @@ class Rectangle {
 	private width: number;
 	private height: number;
 	constructor(width: number, height: number){
-		this.width;
-		this.height;
+		this.width = width;
+		this.height = height;
 	}
 	get width(): number{
 		return this.width;
@@ -20,13 +20,15 @@ class Rectangle {
 class Square extends Rectangle {
 	private side: number;
 	constructor(side: number){
-		this.side = side;
+		// this.side = side;
+		super(side,side);
 	}
+	
 	getPerimeter(): number{
 		return 4*this.side;
 	}
 }
-const rectangle = new Reactangle(5,10);
+const rectangle = new Rectangle(5,10);
 console.log(rectangle.width);
 console.log(rectangle.height);
 console.log(rectangle.getArea());
